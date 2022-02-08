@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/peopleImageInMap"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/group"
+        app:shapeAppearanceOverlay="@style/Circular"
+        android:scaleType="centerCrop"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBarInRecyclerViewMap"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/PeopleNameInMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amean Boy"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#515151"
+        app:layout_constraintLeft_toRightOf="@+id/peopleImageInMap"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="23dp"
+        android:maxWidth="220dp"
+        android:maxHeight="22dp"
+        />
+
+    <TextView
+        android:id="@+id/PeopleStatusInMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Is today your birthday?"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="#515151"
+        app:layout_constraintLeft_toRightOf="@+id/peopleImageInMap"
+        app:layout_constraintTop_toTopOf="@id/PeopleNameInMap"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:maxHeight="30dp"
+        android:maxWidth="210dp"
+        />
+
+    <ImageView
+        android:id="@+id/AddBottomForFriendMap"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginRight="47dp"
+        android:background="@drawable/background_of_search"
+        android:paddingLeft="4dp"
+        android:paddingTop="1dp"
+        android:paddingRight="4dp"
+        android:paddingBottom="1dp"
+        android:src="@drawable/ic_add"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

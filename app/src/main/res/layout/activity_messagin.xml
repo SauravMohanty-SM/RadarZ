@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgrounmessage"
+    android:orientation="vertical"
+    tools:context=".MessaginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/UserNameInGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Radarz"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <View
+            android:id="@+id/viewGroup"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#C4C4C4"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/UserNameInGroup"
+            />
+
+        <TextView
+            android:id="@+id/ChatDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Chat Yet"
+            android:textSize="13sp"
+            android:textColor="#ffffff"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewGroup"
+            android:background="@drawable/background_of_search"
+            android:padding="5dp"
+            />
+
+        <ImageView
+            android:id="@+id/backButtomView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/back_bottom_in_chat_group"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewForChat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/background_for_group_chat_recyclerview"
+        android:paddingBottom="25dp"
+        />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="-80dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/backgound_for_sending_message"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/smili_face_in_messaging"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            />
+
+        <EditText
+            android:id="@+id/sendingEditView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="45dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="Type your text here"
+            android:layout_gravity="center"
+            android:maxHeight="38dp"
+            />
+
+        <ImageView
+            android:id="@+id/sendingButtomMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/send_bottom_message"
+            android:layout_marginLeft="-35dp"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

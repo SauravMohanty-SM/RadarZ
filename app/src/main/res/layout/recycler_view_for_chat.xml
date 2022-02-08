@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal"
+    android:id="@+id/linearLayoutChatView"
+    >
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ImageInGroupChat"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/person"
+            app:shapeAppearanceOverlay="@style/Circular"
+            android:scaleType="centerCrop"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/background_for_recycler_view_in_chat"
+            android:layout_marginRight="13dp"
+            >
+
+            <TextView
+                android:id="@+id/NameInGroupChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Saurav Mohanty"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:textColor="#d35400"
+                android:maxWidth="250dp"
+                />
+
+            <TextView
+                android:id="@+id/MessageInGroupChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Hey, Welcome to coding"
+                android:textSize="13sp"
+                android:textColor="#000"
+                android:maxWidth="250dp"
+                />
+
+            <TextView
+                android:id="@+id/TimeInGroupChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="8dp"
+                android:text="12:48 pm"
+                android:textSize="9sp"
+                android:textColor="#7f8c8d"
+                android:maxWidth="250dp"
+                android:layout_gravity="end"
+                />
+
+        </LinearLayout>
+
+</LinearLayout>

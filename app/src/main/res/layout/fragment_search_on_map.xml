@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".SearchOnMapFragment">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/googleMapSearch"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/recycler_view_background"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Users Near You"
+            android:textSize="13sp"
+            android:background="@drawable/background_of_search"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewForMap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            tools:listitem="@layout/recyclerview_for_map"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBarInMap"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="-50dp"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

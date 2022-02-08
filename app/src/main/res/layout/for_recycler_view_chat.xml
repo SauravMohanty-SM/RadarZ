@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/peopleImageInChat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/group"
+        app:shapeAppearanceOverlay="@style/Circular"
+        android:scaleType="centerCrop"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBarInRecyclerView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/PeopleNameInChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amean Boy"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#515151"
+        app:layout_constraintLeft_toRightOf="@+id/peopleImageInChat"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="23dp"
+        />
+
+    <TextView
+        android:id="@+id/PeopleMessageInChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Is today your birthday?"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="#515151"
+        app:layout_constraintLeft_toRightOf="@+id/peopleImageInChat"
+        app:layout_constraintTop_toTopOf="@id/PeopleNameInChat"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:maxHeight="14sp"
+        android:maxWidth="160dp"
+        />
+
+    <TextView
+        android:id="@+id/DateAndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:15 PM"
+        android:textSize="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="40dp"
+        android:textColor="#515151"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textSize="12dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="38dp"
+        android:layout_marginRight="47dp"
+        android:textColor="#ffffff"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:background="@drawable/counting_message_background"
+        android:visibility="gone"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
