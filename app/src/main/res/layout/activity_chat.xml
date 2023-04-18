@@ -35,7 +35,7 @@
             android:id="@+id/statusChat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="offline"
+            android:textSize="15sp"
             android:textColor="#6B6B6B"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

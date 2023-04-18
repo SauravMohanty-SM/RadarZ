@@ -49,7 +49,6 @@ class SearchOnMapFragment : Fragment(), AddBottomClicked {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_search_on_map, container, false)
     }
 
@@ -93,7 +92,7 @@ class SearchOnMapFragment : Fragment(), AddBottomClicked {
                 var latlng: LatLng = LatLng(it.latitude,it.longitude)
 
                 smf.getMapAsync(OnMapReadyCallback {
-                    var markerOption:MarkerOptions=MarkerOptions().position(latlng).title("Youarehere")
+                    var markerOption:MarkerOptions=MarkerOptions().position(latlng).title("You are here")
 
                     it.addMarker(markerOption)
                     it.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng,11.8F))
@@ -203,5 +202,3 @@ class SearchOnMapFragment : Fragment(), AddBottomClicked {
                 }
     }
 }
-
-

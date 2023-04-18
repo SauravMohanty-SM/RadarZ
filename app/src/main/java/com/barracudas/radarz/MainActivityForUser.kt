@@ -2,9 +2,14 @@ package com.barracudas.radarz
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
 class MainActivityForUser : AppCompatActivity() {
 
@@ -57,5 +62,30 @@ class MainActivityForUser : AppCompatActivity() {
                 .replace(R.id.frame_layout, fragment)
                 .commit()
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("Stop", "Destroy Called")
+        val firebaseAuth: FirebaseAuth = Firebase.auth
+        val CurrentUser = firebaseAuth.currentUser
+        val db = FirebaseFirestore.getInstance()
+        db.collection("users").document(CurrentUser!!.uid).
+                update(mapOf("IsActive" to false))
+            .addOnSuccessListener {
+                Log.d("Update", "Update Successful MainActivityForUser onStop()")
+            }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val firebaseAuth: FirebaseAuth = Firebase.auth
+        val CurrentUser = firebaseAuth.currentUser
+        val db = FirebaseFirestore.getInstance()
+        db.collection("users").document(CurrentUser!!.uid).
+        update(mapOf("IsActive" to true))
+            .addOnSuccessListener {
+                Log.d("Update", "Update Successful on MainActivityForUser onStart()")
+            }
     }
 }

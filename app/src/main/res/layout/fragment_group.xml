@@ -55,13 +55,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleViewGroup"
-        android:paddingTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="40dp"
         android:background="@drawable/recycler_view_background"
-        tools:listitem="@layout/for_recycler_view_chat"
-        />
+        android:paddingTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/for_recycler_view_chat" />
 
     <ProgressBar
         android:id="@+id/progressBarInGroupFragment"

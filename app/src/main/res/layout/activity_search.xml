@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backgroung_of_chat"
+    tools:context=".SearchActivity">
+
+    <EditText
+        android:id="@+id/SearchBar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/background_for_recycler_view_in_chat"
+        android:paddingLeft="12dp"
+        android:hint="Search Here"
+        android:textColorHint="#000"
+        android:textColor="#000"
+        android:drawableEnd="@drawable/ic_search"
+        android:paddingRight="12dp"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSearch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/recycler_view_background"
+        android:paddingTop="35dp"
+        />
+
+</LinearLayout>

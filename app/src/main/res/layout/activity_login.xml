@@ -38,7 +38,7 @@
         android:id="@+id/moto"
         android:layout_width="265dp"
         android:layout_height="wrap_content"
-        android:text="Lorem impluse Dummy textets ghehth sdfjiejfie"
+        android:text="A platform for the people to connect with each other"
         android:textColor="#F0F0F0"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

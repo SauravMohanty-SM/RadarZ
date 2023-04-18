@@ -5,18 +5,24 @@
       <map>
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/back_bottom_in_chat_group.xml" value="0.21796875" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/backgound_for_sending_message.xml" value="0.21796875" />
+        <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/backgroun_for_profile_top.xml" value="0.183" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/background_for_group_chat_recyclerview.xml" value="0.21796875" />
+        <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/background_for_profile_button.xml" value="0.183" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/background_for_recycler_view_in_chat.xml" value="0.21796875" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/background_of_search.xml" value="0.21796875" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/backgroung_of_chat.xml" value="0.21796875" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/botton_background.xml" value="0.199609375" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/counting_message_background.xml" value="0.21796875" />
+        <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/edit_image.xml" value="0.183" />
+        <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/ic_add.xml" value="0.1855" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.18046875" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/ic_baseline_power_settings_new_24.xml" value="0.21796875" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/ic_chat.xml" value="0.21796875" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/ic_group.xml" value="0.21796875" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/ic_group_image.xml" value="0.21796875" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21796875" />
+        <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/ic_location.xml" value="0.1835" />
+        <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/ic_search.xml" value="0.1835" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/login_page_background.xml" value="0.26614583333333336" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/recycler_view_background.xml" value="0.21796875" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/drawable/smili_face_in_messaging.xml" value="0.21796875" />
@@ -27,11 +33,12 @@
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/activity_main_for_user.xml" value="0.1875" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/activity_map.xml" value="0.205859375" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/activity_messagin.xml" value="0.205859375" />
+        <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/activity_search.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/for_recycler_view_chat.xml" value="0.205859375" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/fragment_add_new_user.xml" value="0.205859375" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/fragment_chat.xml" value="0.176" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/fragment_group.xml" value="0.205859375" />
-        <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/fragment_profile.xml" value="0.205859375" />
+        <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/fragment_search_on_map.xml" value="0.205859375" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/recycler_view_for_chat.xml" value="0.205859375" />
         <entry key="..\:/Android Projects/Radarz/app/src/main/res/layout/recyclerview_for_chat.xml" value="0.205859375" />

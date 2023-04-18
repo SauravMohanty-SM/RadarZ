@@ -40,10 +40,13 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
     implementation 'com.google.firebase:firebase-firestore:24.0.0'
     implementation 'com.google.firebase:firebase-database:20.0.3'
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //added for encrypt and decrypt the message
     implementation 'com.scottyab:aescrypt:0.0.1'
 
     testImplementation 'junit:junit:4.+'
@@ -65,4 +68,8 @@ dependencies {
 
     //added dependencies for compressing image in Fire Store
     implementation 'id.zelory:compressor:2.1.1'
+
+    //added retrofit for Networking
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 }

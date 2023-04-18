@@ -39,11 +39,13 @@ class GroupFragment : Fragment() {
     private lateinit var dataList: ArrayList<String>
     private lateinit var lastMessage: ArrayList<String>
     private lateinit var lastTime: ArrayList<String>
+    private lateinit var lastMessageName: ArrayList<String>
     private var Check: Int = 0
     private lateinit var GroupName: String
     private lateinit var progressBar: ProgressBar
     private lateinit var ProgressBar : ProgressDialog
     private lateinit var mImageView: ImageView
+    private lateinit var mSearchButton: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,6 +66,12 @@ class GroupFragment : Fragment() {
             createGroup(view)
         }
 
+        mSearchButton.setOnClickListener {
+            var intent: Intent = Intent(view.context, SearchActivity::class.java)
+            intent.putExtra("Class", "Group")
+            startActivity(intent)
+        }
+
         //TODO: Function for display Groups in recycle view
         displayGroups(view)
 
@@ -77,6 +85,7 @@ class GroupFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recycleViewGroup)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         progressBar = view.findViewById(R.id.progressBarInGroupFragment)
+        mSearchButton = view.findViewById(R.id.SearchBottomGroup)
     }
 
     //TODO: Function to create group
@@ -101,8 +110,12 @@ class GroupFragment : Fragment() {
             if (GroupName != "" && Check == 0) {
 
                 val map:HashMap<String, String> = HashMap()
-                map.put("LastMessage", " ")
-                map.put("LastTime", " ")
+                map.put("Message", "")
+                map.put("Date", "")
+                map.put("Time", "")
+                map.put("UserID", "")
+                map.put("Name", "")
+
                 reference.child(GroupName).child("LastDetails").setValue(map).addOnCompleteListener {
 
                     if (it.isSuccessful) {
@@ -143,21 +156,24 @@ class GroupFragment : Fragment() {
                 AddGroupButtom.visibility = View.VISIBLE
                 dataList = ArrayList<String>()
                 lastMessage = ArrayList<String>()
+                lastMessageName = ArrayList<String>()
                 lastTime = ArrayList<String>()
 
                 if(snapshot.exists()) {
 
                     for (groups in snapshot.children) {
-                        val message = groups.child("LastDetails").child("LastMessage").value.toString()
-                        val time = groups.child("LastDetails").child("LastTime").value.toString()
+                        val message = groups.child("LastDetails").child("Message").value.toString()
+                        val time = groups.child("LastDetails").child("Time").value.toString()
+                        val userName = groups.child("LastDetails").child("Name").value.toString()
                         val group = groups.key
                         lastMessage.add(message)
                         lastTime.add(time)
+                        lastMessageName.add(userName)
                         dataList.add(group!!)
                         Log.d("LOG", "The groups are $group")
                     }
                     progressBar.visibility = View.GONE
-                    adepter = GroupsAdapter(dataList, lastMessage, lastTime,this, this)
+                    adepter = GroupsAdapter(dataList, lastMessage, lastTime, lastMessageName,this, this)
                     recyclerView.adapter = adepter
                 }
             }
@@ -165,6 +181,7 @@ class GroupFragment : Fragment() {
 
             override fun onCancelled(error: DatabaseError) {
                 AddGroupButtom.visibility = View.VISIBLE
+                ProgressBar.dismiss()
                 Toast.makeText(view.context, "Unable to fetch data", Toast.LENGTH_SHORT).show()
             }
 

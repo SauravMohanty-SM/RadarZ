@@ -57,6 +57,7 @@
         android:layout_marginTop="25dp"
         android:maxHeight="14sp"
         android:maxWidth="160dp"
+        android:visibility="invisible"
         />
 
     <TextView
@@ -71,6 +72,7 @@
         android:layout_marginTop="23dp"
         android:layout_marginRight="40dp"
         android:textColor="#515151"
+        android:visibility="invisible"
         />
 
     <TextView
@@ -89,7 +91,7 @@
         android:paddingTop="1dp"
         android:paddingBottom="1dp"
         android:background="@drawable/counting_message_background"
-        android:visibility="visible"
+        android:visibility="invisible"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

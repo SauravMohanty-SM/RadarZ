@@ -12,8 +12,11 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import com.google.firebase.ktx.Firebase
 import com.scottyab.aescrypt.AESCrypt
 import com.squareup.picasso.Picasso
 import java.sql.Timestamp
@@ -44,6 +47,7 @@ class ChatActivity : AppCompatActivity(), ChatMessage {
     private lateinit var mFriendUIDS: ArrayList<String>
     private lateinit var chatRecyclerView: RecyclerView
     private lateinit var DateBox: TextView
+    private lateinit var StatusBox: TextView
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -79,6 +83,8 @@ class ChatActivity : AppCompatActivity(), ChatMessage {
             this.finish()
         }
 
+        getUserCurrentStatus()
+
     }
 
     private fun intiallize() {
@@ -89,6 +95,7 @@ class ChatActivity : AppCompatActivity(), ChatMessage {
         DisplayPicture = findViewById(R.id.displayPicture)
         chatRecyclerView = findViewById(R.id.recyclerViewForChatInChat)
         DateBox = findViewById(R.id.ChatDateInChat)
+        StatusBox = findViewById(R.id.statusChat)
         val layoutManager = LinearLayoutManager(this)
         chatRecyclerView.layoutManager = layoutManager
         layoutManager.stackFromEnd = true
@@ -165,6 +172,37 @@ class ChatActivity : AppCompatActivity(), ChatMessage {
 
     override fun setDate(Dates: String) {
         DateBox.text = Dates
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val db = FirebaseFirestore.getInstance()
+        db.collection("users").document(mOwnUID).
+        update(mapOf("IsActive" to true))
+            .addOnSuccessListener {
+                Log.d("Update", "Update Successful on onCreate()")
+            }
+            .addOnFailureListener {
+                Log.d("Update", "Update Failed onCreate()")
+            }
+    }
+
+    private fun getUserCurrentStatus() {
+        val db = FirebaseFirestore.getInstance()
+        var status: Boolean
+        db.collection("users").document(mFriendUID)
+            .addSnapshotListener { value, error ->
+                if (value != null) {
+                    status = value.data!!["IsActive"] as Boolean
+
+                    if (status) {
+                        StatusBox.text = "online"
+                    } else {
+                        StatusBox.text = "offline"
+                    }
+                }
+
+            }
     }
 }
 

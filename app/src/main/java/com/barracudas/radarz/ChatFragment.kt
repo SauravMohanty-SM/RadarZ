@@ -26,6 +26,7 @@ class ChatFragment : Fragment(), FriendViewClicked {
     private lateinit var mCurrentUser: FirebaseUser
     private lateinit var mFriendList: ArrayList<String>
     private lateinit var recyclerView: RecyclerView
+    private lateinit var mSearchButton: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +45,12 @@ class ChatFragment : Fragment(), FriendViewClicked {
             activity?.finish()
         }
 
+        mSearchButton.setOnClickListener {
+            val intent: Intent = Intent(view.context, SearchActivity::class.java)
+            intent.putExtra("Class", "Chat")
+            startActivity(intent)
+        }
+
         getDataFromFireStore(view)
     }
 
@@ -54,6 +61,7 @@ class ChatFragment : Fragment(), FriendViewClicked {
         mCurrentUser = mAuth.currentUser!!
         recyclerView = view.findViewById(R.id.recycleViewChat)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
+        mSearchButton = view.findViewById(R.id.SearchBottomChat)
     }
 
     private fun getDataFromFireStore(view: View) {

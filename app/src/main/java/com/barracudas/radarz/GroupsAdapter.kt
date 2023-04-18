@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -16,6 +15,7 @@ import com.squareup.picasso.Picasso
 class GroupsAdapter(private val item: ArrayList<String>,
                     private val lastMessage: ArrayList<String>,
                     private val lastTime: ArrayList<String>,
+                    private val lastMessageName: ArrayList<String>,
                     private val listener: GroupClicked,
                     private val listenerImage: ImageClicked): RecyclerView.Adapter<ViewHolderForGroupAdepter>() {
 
@@ -43,9 +43,14 @@ class GroupsAdapter(private val item: ArrayList<String>,
                 holder.progressBar.visibility = View.GONE
             }
 
-        if (lastMessage[position] != null) {
-            holder.LastMessage.text = lastMessage[position]
+        if (lastMessage[position] != "") {
+            var nameArray = lastMessageName[position].split(" ")
+            var name = nameArray[0]
+            holder.LastMessage.text = "$name: ${lastMessage[position]}"
             holder.LastTime.text = lastTime[position]
+        } else {
+            holder.LastMessage.text = ""
+            holder.LastTime.text = ""
         }
 
         holder.GroupImage.setOnClickListener {

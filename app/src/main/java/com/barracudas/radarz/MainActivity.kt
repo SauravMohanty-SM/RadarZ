@@ -1,23 +1,16 @@
 package com.barracudas.radarz
 
 import android.Manifest
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.location.Location
-import android.location.LocationListener
-import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
 import android.os.Looper
-import android.provider.UserDictionary.Words
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
-import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.firebase.auth.FirebaseAuth
@@ -32,13 +25,7 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.common.base.MoreObjects
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
-import kotlin.properties.Delegates
-import android.provider.UserDictionary.Words.APP_ID
 import com.google.android.gms.location.*
-import com.squareup.picasso.Picasso
 import java.util.concurrent.TimeUnit
 
 
@@ -261,7 +248,8 @@ class MainActivity : AppCompatActivity(), PermissionListener {
             "Longitude" to mLongitude.toDouble(),
             "Status" to "Available",
             "Uid" to mCurrentUser?.uid,
-            "DP" to personImage.toString()
+            "DP" to personImage.toString(),
+            "IsActive" to true
         )
 
 
